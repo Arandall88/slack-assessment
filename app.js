@@ -21,7 +21,7 @@ var channel_id = process.env.CHANNEL_ID;
 
 
 // Handle Events API events
-app.get('/events', function(req, res){
+app.post('/events', function(req, res){
 
   if(req.body.challenge) {
     // Respond to the challenge
