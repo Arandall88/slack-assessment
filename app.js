@@ -21,7 +21,7 @@ var channel_id = process.env.CHANNEL_ID;
 
 
 // Handle Events API events
-app.post('/events', function(req, res){
+app.get('/events', function(req, res){
 
   if(req.body.challenge) {
     // Respond to the challenge
@@ -80,7 +80,7 @@ function postUpdate(attachments) {
     "text": JSON.stringify(attachments),
     "pretty": true
   };
-  request.post(
+  app.post(
     "https://slack.com/api/chat.postmessage",
     {
       form: data
