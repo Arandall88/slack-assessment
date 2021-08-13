@@ -80,7 +80,7 @@ function postUpdate(attachments) {
     "text": JSON.stringify(attachments),
     "pretty": true
   };
-  app.post(
+  request.post(
     "https://slack.com/api/chat.postmessage",
     {
       form: data
